@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	//Canvas stuff
-  console.log("ASDFASDFSA");
 	var canvas = $("#canvas")[0];
 	var ctx = canvas.getContext("2d");
 	var w = $("#canvas").width();
@@ -123,9 +122,10 @@ $(document).ready(function(){
 		//Lets paint the food
 		//paint_cell(food.x, food.y);
     paint_food(food.x, food.y);
-		//Lets paint the score
-		var score_text = "Score: " + score;
-		ctx.fillText(score_text, 5, h-5);
+		// //Lets paint the score
+		// var score_text = "Score: " + score;
+		// ctx.fillText(score_text, 5, h-5);
+    document.getElementById('score').innerHTML = score;
 	}
 
   //Lets first create a generic function to paint cells
