@@ -26,12 +26,13 @@ $(document).ready(function(){
 		//finally lets display the score
 		score = 0;
 
-    imageObj.onload = function() {
-      // dragObj.onload = function() {
-        if(typeof game_loop != "undefined") clearInterval(game_loop);
-          game_loop = setInterval(paint, 60);
-      //};
-    };
+		// Start the game loop immediately so the game runs even if images
+		// take time to load or are blocked. We still redraw once images load.
+		if(typeof game_loop != "undefined") clearInterval(game_loop);
+		game_loop = setInterval(paint, 60);
+
+		imageObj.onload = function() { paint(); };
+		dragObj.onload = function() { paint(); };
 	}
 	init();
 
